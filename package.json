@@ -1,0 +1,50 @@
+{
+  "name": "sts-client-runtime",
+  "version": "4.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Servingtokens.com <servingtokens.com@protonmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/importpw/vercel-bash",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/importpw/vercel-bash.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "postinstall": "npx next telemetry disable",
+    "build": "chmod +x build.sh && ./build.sh",
+    "now-build": "next build",
+    "prepublishOnly": "npm run build",
+    "vercel-dev": "npx vercel",
+    "vercel-prod": "npx vercel --prod",
+    "docker-build": "docker build . -t sts-runtime",
+    "docker-run": "docker run -p3000:3000 sts-runtime",
+    "docker-ls": "docker image ls",
+    "start": "next start"
+  },
+  "dependencies": {
+    "execa": "5.0.0",
+    "fs-extra": "^10.0.1",
+    "node-fetch": "2",
+    "snake-case": "3.0.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
+    "@types/node": "^14.18.21",
+    "@types/node-fetch": "2",
+    "@types/react": "^17.0.47",
+    "@vercel/build-utils": "^2.15.0",
+    "@vercel/frameworks": "^0.2.0",
+    "@vercel/routing-utils": "^1.9.2",
+    "eslint": "8.12.0",
+    "eslint-config-next": "12.1.4",
+    "next": "^12.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "typescript": "^4.7.4"
+  }
+}

@@ -1,0 +1,8 @@
+/node_modules
+/README.md
+/dist
+/test
+/.*
+/*.tgz
+/.next
+/.vercel
